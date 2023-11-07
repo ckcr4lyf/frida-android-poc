@@ -32,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(Integer.toString(myInt));
 
         TextView tv2 = binding.jniFunction;
-        tv2.setText("TODO");
+
+        byte[] res = someManipulation(myInstance);
+        String s = new String(res);
+        tv2.setText(s);
     }
 
 
