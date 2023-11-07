@@ -10,5 +10,7 @@ extern "C"
 JNIEXPORT jint JNICALL
 Java_com_example_fridapoc_MainActivity_intFromJNIViaClass(JNIEnv *env, jobject thiz,
                                                           jobject instance) {
-    // TODO: implement intFromJNIViaClass()
+    jclass cls = env->FindClass("com/example/fridapoc/ExampleAlpha");
+    jfieldID intFieldId = env->GetFieldID(cls, "height", "I");
+    return env->GetIntField(instance, intFieldId);
 }

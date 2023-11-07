@@ -25,8 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = binding.sampleText;
-        tv.setText(stringFromJNI());
+
+        ExampleAlpha myInstance = new ExampleAlpha();
+        int myInt = intFromJNIViaClass(myInstance);
+//        tv.setText(stringFromJNI());
+        tv.setText(Integer.toString(myInt));
     }
+
 
     /**
      * A native method that is implemented by the 'fridapoc' native library,
