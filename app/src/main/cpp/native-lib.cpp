@@ -20,10 +20,14 @@ Java_com_example_fridapoc_MainActivity_someManipulation(JNIEnv *env, jobject thi
                                                         jobject instance) {
     int8_t data[] = {0x41, 0x42, 0x43, 0x44};
 
+    jclass cls = env->FindClass("com/example/fridapoc/ExampleAlpha");
+    jfieldID intFieldId = env->GetFieldID(cls, "height", "I");
+    jint the_val = env->GetIntField(instance, intFieldId);
+
     jbyteArray myArray = env->NewByteArray(4);
     jbyte* myJybtes = new jbyte[4];
     for (int i = 0; i < 4; i++){
-        myJybtes[i] = data[i]; // TODO: Here we could add the value of the class proeprty or such
+        myJybtes[i] = data[i] + the_val;
     }
 
     env->SetByteArrayRegion(myArray, 0, 4, myJybtes);
