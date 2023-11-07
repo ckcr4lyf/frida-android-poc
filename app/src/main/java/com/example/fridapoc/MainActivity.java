@@ -30,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         int myInt = intFromJNIViaClass(myInstance);
 //        tv.setText(stringFromJNI());
         tv.setText(Integer.toString(myInt));
+
+        TextView tv2 = binding.jniFunction;
+        tv2.setText("TODO");
     }
 
 
