@@ -14,3 +14,9 @@ Java_com_example_fridapoc_MainActivity_intFromJNIViaClass(JNIEnv *env, jobject t
     jfieldID intFieldId = env->GetFieldID(cls, "height", "I");
     return env->GetIntField(instance, intFieldId);
 }
+extern "C"
+JNIEXPORT jbyteArray JNICALL
+Java_com_example_fridapoc_MainActivity_someManipulation(JNIEnv *env, jobject thiz,
+                                                        jobject instance) {
+    // TODO: implement someManipulation()
+}

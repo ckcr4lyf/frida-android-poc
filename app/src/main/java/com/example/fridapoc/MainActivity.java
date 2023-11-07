@@ -43,4 +43,5 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public native int intFromJNIViaClass(ExampleAlpha instance);
+    public native byte[] someManipulation(ExampleAlpha instance);
 }
